@@ -431,26 +431,91 @@
             color: rgba(245, 241, 238, 0.55);
         }
 
-        /* ── EMERGENCY SCENARIO ── */
-        .scenario-section {
-            padding: 100px 24px;
-            text-align: center;
+        /* ── SCENARIO STACK ── */
+        .scenarios-section {
+            padding: 120px 56px;
             background-color: #0A0A0A;
-            border-top: 1px solid rgba(230, 210, 211, 0.04);
+            border-top: 0.5px solid rgba(245,240,235,0.08);
         }
 
-        .scenario-section p {
+        .scenarios-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .scenarios-header h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 2.6rem;
             font-weight: 300;
-            font-style: italic;
-            line-height: 2;
-            color: rgba(245, 241, 238, 0.5);
-            max-width: 640px;
-            margin: 0 auto;
+            color: #F5F1EE;
+            line-height: 1.3;
         }
 
-        .scenario-section p strong {
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(245,240,235,0.06);
+            max-width: 1100px;
+            margin: 0 auto 80px;
+        }
+
+        .scenario-card {
+            background: #0A0A0A;
+            padding: 44px 36px;
+            transition: background 0.3s ease;
+        }
+
+        .scenario-card:hover {
+            background: #111;
+        }
+
+        .scenario-label {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #E6D2D3;
+            margin-bottom: 20px;
+        }
+
+        .scenario-problem {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #F5F1EE;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .scenario-detail {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: rgba(245,240,235,0.4);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .scenario-outcome {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            font-weight: 300;
+            color: #E6D2D3;
+            line-height: 1.5;
+        }
+
+        .scenarios-closing {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: rgba(245,240,235,0.5);
+            line-height: 1.8;
+        }
+
+        .scenarios-closing strong {
             color: #E6D2D3;
             font-weight: 400;
         }
@@ -918,6 +983,10 @@
             .trust-grid { grid-template-columns: 1fr; gap: 20px; }
             .trust-section { padding: 80px 20px; }
 
+            .scenarios-section { padding: 80px 20px; }
+            .scenarios-grid { grid-template-columns: 1fr; }
+            .scenarios-header h2 { font-size: 1.8rem; }
+
             .coverage-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
             .coverage-section { padding: 80px 20px; }
 
@@ -1036,13 +1105,51 @@
         </div>
     </section>
 
-    <!-- EMERGENCY SCENARIO -->
-    <section class="scenario-section">
-        <p class="reveal">Your Flo tracker already knew your cycle was coming.<br>
-        What if something actually did something about it?<br>
-        Pads. Advil. Dark chocolate. Ordered three days before you needed them.<br>
-        <strong>Delivered before you even thought about it.<br>
-        That's not convenience. That's coverage.</strong></p>
+    <!-- SCENARIO STACK -->
+    <section class="scenarios-section">
+        <div class="scenarios-header">
+            <p class="section-label reveal">Real Life. Real Coverage.</p>
+            <h2 class="reveal reveal-delay-1">My Guy doesn't wait for the problem.<br>We make sure it never shows up.</h2>
+        </div>
+        <div class="scenarios-grid">
+            <div class="scenario-card reveal reveal-delay-1">
+                <span class="scenario-label">Cycle Care</span>
+                <p class="scenario-problem">Your Flo tracker knew your cycle was coming. My Guy orders the pads before you run out.</p>
+                <p class="scenario-detail">Pads. Advil. Dark chocolate. Delivered three days before you needed them.</p>
+                <p class="scenario-outcome">You never woke up at 3am without a plan again.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-2">
+                <span class="scenario-label">Car Registration</span>
+                <p class="scenario-problem">Your registration renews every year on your birthday. Every year, it sneaks up on you.</p>
+                <p class="scenario-detail">My Guy schedules your inspection in advance, flags what needs fixing, handles the alternative fuel fee, and renews your tags.</p>
+                <p class="scenario-outcome">Before your birth month even hits.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-3">
+                <span class="scenario-label">Pet Care</span>
+                <p class="scenario-problem">Your dog's heartworm prevention lapsed last month. You didn't realize it until the vet asked.</p>
+                <p class="scenario-detail">My Guy tracks your pet's med schedule, books the vet appointment, and reminds you when refills are due.</p>
+                <p class="scenario-outcome">You just show up.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-1">
+                <span class="scenario-label">Home Maintenance</span>
+                <p class="scenario-problem">Your HVAC filter hasn't been changed in seven months. You didn't even know there was a filter.</p>
+                <p class="scenario-detail">My Guy knows your system, knows the schedule, and has a vetted tech replace it.</p>
+                <p class="scenario-outcome">Before your air quality drops or your unit breaks down.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-2">
+                <span class="scenario-label">Seasonal Prep</span>
+                <p class="scenario-problem">Last winter your pipes froze because no one winterized them.</p>
+                <p class="scenario-detail">This year, My Guy scheduled the insulation wrap in October. You didn't think about it.</p>
+                <p class="scenario-outcome">That's the point.</p>
+            </div>
+            <div class="scenario-card reveal reveal-delay-3">
+                <span class="scenario-label">Emergency</span>
+                <p class="scenario-problem">It's 11pm. Something's leaking under the sink. You don't know who to call, what it costs, or if that guy on Google is legit.</p>
+                <p class="scenario-detail">You text My Guy. By midnight, a licensed, vetted plumber is on the way. You get his name, his credentials, and his ETA.</p>
+                <p class="scenario-outcome">You go to sleep.</p>
+            </div>
+        </div>
+        <p class="scenarios-closing reveal">Six different moments. One membership. Zero mental load.<br><strong>That's My Guy.</strong></p>
     </section>
 
     <!-- COVERAGE -->
