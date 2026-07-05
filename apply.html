@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Pro | My Guy</title>
+    <link rel="icon" type="image/png" href="logo-square.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #F5F1EE; min-height: 100vh; }
+        nav { padding: 28px 48px; border-bottom: 1px solid rgba(230,210,211,0.04); }
+        nav img { height: 32px; filter: brightness(0) invert(0.85) sepia(0.3) saturate(0.8) hue-rotate(315deg); }
+        .content { max-width: 620px; margin: 0 auto; padding: 64px 24px 120px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 500; color: #E6D2D3; margin-bottom: 12px; line-height: 1.1; }
+        .lede { font-size: 1rem; font-weight: 300; line-height: 1.7; color: rgba(245,241,238,0.65); margin-bottom: 20px; }
+        .pitch { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 44px; }
+        .pitch div { flex: 1; min-width: 150px; }
+        .pitch .big { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #E6D2D3; }
+        .pitch .small { font-size: 0.8rem; font-weight: 300; color: rgba(245,241,238,0.5); margin-top: 4px; line-height: 1.5; }
+        label { display: block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #E6D2D3; margin: 22px 0 8px; }
+        input, textarea, select {
+            width: 100%; background: rgba(245,241,238,0.04); border: 1px solid rgba(230,210,211,0.14);
+            border-radius: 10px; padding: 14px 16px; color: #F5F1EE; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+        }
+        input::placeholder, textarea::placeholder { color: rgba(245,241,238,0.28); }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #E6D2D3; }
+        select option { background: #0A0A0A; }
+        textarea { resize: vertical; min-height: 90px; }
+        .row { display: flex; gap: 14px; }
+        .row > div { flex: 1; }
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .chip { border: 1px solid rgba(230,210,211,0.18); border-radius: 999px; padding: 9px 16px; font-size: 0.85rem; cursor: pointer; color: rgba(245,241,238,0.7); user-select: none; transition: all 0.15s; }
+        .chip.on { background: #E6D2D3; color: #0A0A0A; border-color: #E6D2D3; }
+        button { width: 100%; margin-top: 32px; background: #E6D2D3; color: #0A0A0A; border: none; border-radius: 999px; padding: 16px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+        button:disabled { opacity: 0.5; cursor: default; }
+        .fine { font-size: 0.72rem; font-weight: 300; color: rgba(245,241,238,0.35); margin-top: 16px; text-align: center; line-height: 1.6; }
+        .done { text-align: center; padding: 40px 0; }
+        .done h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #E6D2D3; margin-bottom: 12px; }
+        .done p { font-weight: 300; color: rgba(245,241,238,0.6); line-height: 1.7; }
+        .err { color: #E8A0A0; font-size: 0.85rem; margin-top: 14px; text-align: center; }
+        a { color: #E6D2D3; }
+        @media (max-width: 640px) { nav { padding: 20px; } .content { padding: 40px 20px 80px; } h1 { font-size: 2rem; } .row { flex-direction: column; gap: 0; } }
+    </style>
+</head>
+<body>
+    <nav><a href="/"><img src="logo.png" alt="My Guy"></a></nav>
+    <div class="content">
+        <div id="form-view">
+            <h1>Become a My&nbsp;Guy Pro.</h1>
+            <p class="lede">We send our members' service requests to a small, vetted network of trusted pros. You do great work — we handle the rest.</p>
+            <div class="pitch">
+                <div><div class="big">0% commission</div><div class="small">Keep 100% of your rate. We make money on membership, not on you.</div></div>
+                <div><div class="big">Booked jobs</div><div class="small">Pre-qualified, paid work — no lead fees, no chasing.</div></div>
+                <div><div class="big">No admin</div><div class="small">We handle scheduling, the customer, and payment.</div></div>
+            </div>
+
+            <form id="apply">
+                <label>Business name</label>
+                <input name="business_name" required placeholder="e.g. RapidFlow Plumbing" />
+
+                <div class="row">
+                    <div><label>Your name</label><input name="contact_name" required placeholder="Marcus Bell" /></div>
+                    <div><label>Business type</label>
+                        <select name="business_type"><option value="individual">Individual / owner-operator</option><option value="company">Company</option></select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><label>Email</label><input name="email" type="email" required placeholder="you@business.com" /></div>
+                    <div><label>Phone</label><input name="phone" type="tel" required placeholder="(404) 555-0123" /></div>
+                </div>
+
+                <label>Services you offer</label>
+                <div class="chips" id="chips">
+                    <div class="chip" data-v="Home">Home</div>
+                    <div class="chip" data-v="Car">Car</div>
+                    <div class="chip" data-v="Pet">Pet</div>
+                    <div class="chip" data-v="Errands">Errands</div>
+                    <div class="chip" data-v="Self-care">Self-care</div>
+                </div>
+
+                <div class="row">
+                    <div><label>Service area ZIP</label><input name="zip" placeholder="30038" /></div>
+                    <div><label>Years in business</label><input name="years" type="number" min="0" placeholder="6" /></div>
+                </div>
+
+                <label>Tell us about your work</label>
+                <textarea name="bio" placeholder="What you do, your specialties, licensing/insurance, and why members should trust you."></textarea>
+
+                <button type="submit" id="submit">Apply to join</button>
+                <p class="err" id="err" style="display:none"></p>
+                <p class="fine">By applying you agree we may contact you to verify your license, insurance, and background before any work. My&nbsp;Guy Inc.</p>
+            </form>
+        </div>
+
+        <div id="done-view" class="done" style="display:none">
+            <h2>Thank you — we've got it.</h2>
+            <p>Our team will review your application and reach out to verify your credentials and get you set up. Welcome to My&nbsp;Guy.</p>
+        </div>
+    </div>
+
+    <script>
+        const SB_URL = "https://qzjsvslbnfwieibobsvg.supabase.co";
+        // Supabase publishable "anon" key — public by design (ships in every client;
+        // RLS enforces access). Not a secret. gitleaks:allow
+        const SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF6anN2c2xibmZ3aWVpYm9ic3ZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4MTc4OTIsImV4cCI6MjA4NjM5Mzg5Mn0.EwARheAEnzIgeHTyRtxgf0doWJTMf-PZuQEWef9R2ow"; // gitleaks:allow
+        const chips = [...document.querySelectorAll('.chip')];
+        chips.forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
+
+        document.getElementById('apply').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const f = e.target, btn = document.getElementById('submit'), err = document.getElementById('err');
+            err.style.display = 'none'; btn.disabled = true; btn.textContent = 'Submitting…';
+            const services = chips.filter(c => c.classList.contains('on')).map(c => c.dataset.v).join(', ');
+            const zip = f.zip.value.trim();
+            const body = {
+                business_name: f.business_name.value.trim(),
+                contact_name: f.contact_name.value.trim(),
+                email: f.email.value.trim(),
+                phone: f.phone.value.trim(),
+                business_type: f.business_type.value,
+                years_experience: f.years.value ? parseInt(f.years.value, 10) : null,
+                service_area_zip_codes: zip ? [zip] : null,
+                bio: (f.bio.value.trim() + (services ? `\n\nServices: ${services}` : '')).trim() || null,
+                status: 'applied',
+            };
+            try {
+                const res = await fetch(`${SB_URL}/rest/v1/vendors`, {
+                    method: 'POST',
+                    headers: { apikey: SB_ANON, Authorization: 'Bearer ' + SB_ANON, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+                    body: JSON.stringify(body),
+                });
+                if (!res.ok) throw new Error((await res.json()).message || 'Something went wrong.');
+                document.getElementById('form-view').style.display = 'none';
+                document.getElementById('done-view').style.display = 'block';
+                window.scrollTo(0, 0);
+            } catch (e2) {
+                err.textContent = e2.message + ' Please try again or email admin@myguyapp.com.';
+                err.style.display = 'block'; btn.disabled = false; btn.textContent = 'Apply to join';
+            }
+        });
+    </script>
+</body>
+</html>
