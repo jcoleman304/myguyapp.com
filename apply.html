@@ -73,6 +73,9 @@
                     <div><label>Phone</label><input name="phone" type="tel" required placeholder="(404) 555-0123" /></div>
                 </div>
 
+                <label>Business website</label>
+                <input name="website" type="url" placeholder="https://yourbusiness.com" />
+
                 <label>Services you offer</label>
                 <div class="chips" id="chips">
                     <div class="chip" data-v="Home">Home</div>
@@ -121,6 +124,7 @@
                 contact_name: f.contact_name.value.trim(),
                 email: f.email.value.trim(),
                 phone: f.phone.value.trim(),
+                website: f.website.value.trim() || null,
                 business_type: f.business_type.value,
                 years_experience: f.years.value ? parseInt(f.years.value, 10) : null,
                 service_area_zip_codes: zip ? [zip] : null,
