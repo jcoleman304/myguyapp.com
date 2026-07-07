@@ -58,6 +58,10 @@
             </div>
 
             <form id="apply">
+                <!-- Honeypot: hidden from humans, bots fill it. Submissions with it set are dropped. -->
+                <input type="text" name="company_url" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true"
+                       style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+
                 <label>Business name</label>
                 <input name="business_name" required placeholder="e.g. RapidFlow Plumbing" />
 
@@ -115,6 +119,12 @@
 
         document.getElementById('apply').addEventListener('submit', async (e) => {
             e.preventDefault();
+            // Honeypot tripped -> silently accept (bot thinks it succeeded), send nothing.
+            if (document.getElementById('hp').value) {
+                document.getElementById('form-view').style.display = 'none';
+                document.getElementById('done-view').style.display = 'block';
+                return;
+            }
             const f = e.target, btn = document.getElementById('submit'), err = document.getElementById('err');
             err.style.display = 'none'; btn.disabled = true; btn.textContent = 'Submitting…';
             const services = chips.filter(c => c.classList.contains('on')).map(c => c.dataset.v).join(', ');
